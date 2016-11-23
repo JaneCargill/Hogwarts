@@ -3,6 +3,8 @@
 <p>Second name: <%= @student.second_name %></p>
 <p>Age: <%= @student.age %></p>
 <p>House: <%= @student.house.name %></p>
+<p>Logo: <img src="<%= @student.house.logo %>" alt = "logo"
+style = "width:300px;height:300px;"><p>
   <p>
     <a href="/students/<%= @student.id %>/edit">Edit</a>
     </p>

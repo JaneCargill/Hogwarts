@@ -1,0 +1,18 @@
+body {
+  background-image: url("http://img15.deviantart.net/e29e/i/2015/240/8/b/hogwarts_wallpaper_by_uworldbrah-d97glz8.png")
+
+}
+
+
+h1 {
+    color: red;
+    font-family: verdana;
+    font-size: 40px;
+    text-align: center;
+}
+
+p {
+    color: white;
+    font-family: verdana;
+    font-size: 20px;
+}
