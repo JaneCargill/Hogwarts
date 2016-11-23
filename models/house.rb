@@ -43,8 +43,8 @@ class House
 
   def self.find_id(name)
     sql = "SELECT id from houses WHERE name = #{name}"
-    house_id = SqlRunner.run( sql )
-    return house_id[0]['id'].to_i
+    house = SqlRunner.run( sql )
+    return House.new( house.first )
   end
   
   def self.destroy( id )
