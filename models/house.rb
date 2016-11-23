@@ -33,13 +33,6 @@ class House
     return result
   end
 
-  def self.update( options )
-    sql = "UPDATE houses SET
-          name='#{options['name']}',
-          logo='#{options['logo']}'
-          WHERE id='#{options['id']}'"
-    SqlRunner.run( sql )
-  end
 
   def self.find_id(name)
     sql = "SELECT id from houses WHERE name = #{name}"
@@ -47,9 +40,10 @@ class House
     return House.new( house.first )
   end
   
-  def self.destroy( id )
-    sql = "DELETE FROM houses WHERE id=#{id}"
-    SqlRunner.run( sql )
+  def student
+    sql = "SELECT * FROM students WHERE house_id=#{@id}"
+    student_data = SqlRunner.run( sql )
+    return House.new(student_data)
   end
 
 end
