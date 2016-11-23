@@ -1,0 +1,15 @@
+<h1> Student Details </h1>
+<p>First name: <%= @student.first_name %></p>
+<p>Second name: <%= @student.second_name %></p>
+<p>Age: <%= @student.age %></p>
+<p>House: <%= @student.house %></p>
+<p>
+  
+
+  <form action = "/students/<%= @student.id %>/edit" method = "get">
+  <input type = "submit" value = "Edit" />
+
+  </p>
+<form action = "/students/<%= @student.id %>/delete" method = "post">
+<input type = "submit" value = "Delete" />
+</form>

@@ -1,0 +1,14 @@
+<h1> Hogwarts Students</h1>
+<form action="/students/new" method="get">
+<input type="submit" value="Add a new student" />
+</form>
+<% for student in @students %>
+<p>Name: <%= student.pretty_name()  %></p>
+<p>House: <%= student.house() %></p>
+<p>Age: <%= student.age() %></p>
+
+<form action="/students/<%= student.id  %>" method="get">
+<input type="submit" value="Show details" />
+</form>
+<hr/>
+<% end %>
