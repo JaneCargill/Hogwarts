@@ -9,7 +9,7 @@ student = Student.find(1)
 # binding.pry
 # nil
 
-#Show all the pizzas
+#Show all the student
 get '/students' do
   @students = Student.all
   if @students[0] != nil

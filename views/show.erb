@@ -2,7 +2,7 @@
 <p>First name: <%= @student.first_name %></p>
 <p>Second name: <%= @student.second_name %></p>
 <p>Age: <%= @student.age %></p>
-<p>House: <%= @student.house %></p>
+<p>House: <%= @student.house.name %></p>
   <p>
     <a href="/students/<%= @student.id %>/edit">Edit</a>
     </p>

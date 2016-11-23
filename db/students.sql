@@ -11,6 +11,6 @@ CREATE TABLE students (
   id serial8 primary key,
   first_name varchar(255),
   second_name varchar(255),
-  house varchar(255),
+  house_id int8 references houses(id),
   age int2
 );
