@@ -2,6 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 require_relative( 'models/student')
+require_relative( 'models/house')
 
 students = Student.all()
 student = Student.find(1)
@@ -20,7 +21,8 @@ get '/students' do
 end
 
 #Add a new student
-get '/students/new' do 
+get '/students/new' do
+  @houses = House.all()
   erb(:new)
 end
 
@@ -45,6 +47,7 @@ end
 
 #show the edit student form
 get '/students/:id/edit' do
+  @houses = House.all()
   @student = Student.find( params[:id])
 erb(:edit)
 end

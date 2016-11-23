@@ -48,12 +48,11 @@ class Student
   end
 
   def self.update( options )
-    house_id = House.find_id("#{options['house_id']}")
     sql = "UPDATE students SET
           first_name='#{options['first_name']}',
           second_name='#{options['second_name']}',
-          house_id=#{house_id},
-          age='#{options['age']}'
+          house_id='#{options['house_id']}',
+          age=#{options['age']}
           WHERE id=#{options['id']}"
     SqlRunner.run( sql )
   end

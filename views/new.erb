@@ -14,14 +14,14 @@
       <input type="text"  name="second_name"/>
     </label>
   </p>
-
+  <p>
   <label>
     House:
     <select name="house_id">
-      <option value="1">Gryffindor</option>
-      <option value="2">Slytherin</option>
-      <option value="3">Hufflepuff</option>
-      <option value="4">Ravenclaw</option>
+      <option disabled selected>select..</option>
+    <% for house in @houses %>
+      <option value="<%= house.id %>"><%= house.name %></option>
+    <% end %>
     </select>
     </label>
   </p>

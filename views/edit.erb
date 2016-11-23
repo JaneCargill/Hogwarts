@@ -16,37 +16,19 @@
     </label>
   </p>
 
+
   <p>
   <label>
     House:
-    <select name="house">
-      <option
-       <%= "selected" if @student.house == "Gryffindor"%>
-        value=Gryffindor>
-        Gryffindor
-       </option>
-
-      <option
-       <%= "selected" if @student.house == "Slytherin"%>
-        value=Slytherin>
-        Slytherin
-       </option>
-
-       <option
-        <%= "selected" if @student.house == "Hufflepuff"%>
-         value=Hufflepuff>
-         Hufflepuff
-        </option>
-
-        <option
-         <%= "selected" if @student.house == "Ravenclaw"%>
-          value=Ravenclaw>
-          Ravenclaw
-         </option>
-
+    <select name="house_id">
+      <option disabled selected>select..</option>
+    <% for house in @houses %>
+      <option <%= "selected" if @student.house.id == house.id %> value="<%= house.id %>"><%= house.name %></option>
+    <% end %>
     </select>
     </label>
   </p>
+
 
   <p>
     <label>
