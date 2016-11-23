@@ -39,8 +39,19 @@ end
 
 #delete a student from the db
 post '/students/:id/delete' do
-  Students.destroy( params[:id])
+  Student.destroy(params[:id])
   redirect to('/students')
 end
 
+#show the edit student form
+get '/students/:id/edit' do
+  @student = Student.find( params[:id])
+erb(:edit)
+end
+
+#update the student edited
+post '/students/:id' do
+Student.update( params )
+redirect to("/students/#{params[:id]}")
+end
 

@@ -1,0 +1,60 @@
+<h1>Update your details</h1>
+
+<form action="/students/<%= @student.id %>" method="post">
+  <p>
+    <label>
+      First name: 
+      <input type="text"  name="first_name" value= "<%= @student.first_name %>"/>
+
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Second name: 
+      <input type="text"  name="second_name" value= "<%= @student.second_name %>"/>
+    </label>
+  </p>
+
+  <p>
+  <label>
+    House:
+    <select name="house">
+      <option
+       <%= "selected" if @student.house == "Gryffindor"%>
+        value=Gryffindor>
+        Gryffindor
+       </option>
+
+      <option
+       <%= "selected" if @student.house == "Slytherin"%>
+        value=Slytherin>
+        Slytherin
+       </option>
+
+       <option
+        <%= "selected" if @student.house == "Hufflepuff"%>
+         value=Hufflepuff>
+         Hufflepuff
+        </option>
+
+        <option
+         <%= "selected" if @student.house == "Ravenclaw"%>
+          value=Ravenclaw>
+          Ravenclaw
+         </option>
+
+    </select>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Age: 
+      <input type="number"  name="age" value= "<%= @student.age %>"/>
+    </label>
+  </p>
+
+  <input type="submit" value="Update" />
+
+</form>

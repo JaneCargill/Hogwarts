@@ -3,13 +3,11 @@
 <p>Second name: <%= @student.second_name %></p>
 <p>Age: <%= @student.age %></p>
 <p>House: <%= @student.house %></p>
-<p>
-  
-
-  <form action = "/students/<%= @student.id %>/edit" method = "get">
-  <input type = "submit" value = "Edit" />
-
-  </p>
+  <p>
+    <a href="/students/<%= @student.id %>/edit">Edit</a>
+    </p>
+    
 <form action = "/students/<%= @student.id %>/delete" method = "post">
 <input type = "submit" value = "Delete" />
 </form>
+
