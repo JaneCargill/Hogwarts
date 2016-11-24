@@ -40,10 +40,17 @@ class House
     return House.new( house.first )
   end
   
-  def student
-    sql = "SELECT * FROM students WHERE house_id=#{@id}"
-    student_data = SqlRunner.run( sql )
-    return House.new(student_data)
+  def students
+    sql = "SELECT s.* FROM houses h 
+    INNER JOIN students s
+    ON h.id = s.house_id
+    WHERE s.house_id = #{@id};"
+    return House.get_many(sql)
   end
 
+  def self.get_many(sql)
+    houses = SqlRunner.run(sql)
+    result = houses.map { |student| Student.new( student ) }
+    return result
+  end
 end

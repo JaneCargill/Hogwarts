@@ -1,5 +1,8 @@
 <h1> <%= @house.name%> </h1>
 <p> <img src="<%= @house.logo %>" alt = "logo"
 style = "width:300px;height:300px;"></p>
-<!-- <p>Students: <%= @house.student %></p>
- -->
+<% for student in @house.students %>
+<p>Name: <%= student.first_name %></p>
+<p>Last Name: <%= student.second_name %></p>
+<hr/>
+<% end %>
